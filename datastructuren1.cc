@@ -1,10 +1,11 @@
 #include <iostream>
 
-#include "array.h"
+#include "stlarray.h"
 #include "linkedlist.h"
 #include "stlstack.h"
 #include "stlvector.h"
 #include "backspace.h"
+
 
 
 int main(int, char* [])
