@@ -76,9 +76,8 @@ bool arrayStack<T>::top(T& topItem) {
 		topItem = DynamicArray[n-1];
 		return true;
 	}
-	else {
+	else 
 		return false;
-	}
 }
 
 #endif
