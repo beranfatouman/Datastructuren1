@@ -13,8 +13,8 @@ class vectorStack {
 		void clear();
 		bool push(T& newItem);
 		bool pop();
-		bool top(T& topItem)
-}
+		bool top(T& topItem);
+};
 
 template <typename T>
 vectorStack<T>::vectorStack() {
