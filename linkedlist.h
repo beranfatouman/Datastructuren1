@@ -1,22 +1,23 @@
 template <typename T>
-class listStack {
-	private:
-		node *head; node *tail;
-  	public:
-		listStack();
-		~listStack();
-		bool isEmpty();
-		void clear();
-		bool push(T& newItem);
-		bool pop();
-		bool top(T& topItem);
-}
-
-template <typename T>
 struct node {
 	T data;
-	node *next;
-}
+	node<T> *next;
+};
+
+template <typename T>
+class listStack {
+	private:
+		node<T> *head; 
+		node<T> *tail;
+  	public:
+		listStack();
+		//~listStack();
+		bool isEmpty();
+		void clear();
+		bool push(T newItem);
+		bool pop();
+		bool top(T& topItem);
+};
 
 template <typename T>
 listStack<T>::listStack() {
@@ -35,7 +36,7 @@ template <typename T>
 void listStack<T>::clear() {
 	if (!isEmpty()) {
 		while (head != NULL) {
-			node* temp;
+			node<T>* temp;
 			temp = head->next;
 			delete head;
 			head = temp;
@@ -45,34 +46,32 @@ void listStack<T>::clear() {
 }
 		
 template <typename T>
-bool listStack<T>::push(T& newItem) {
-	node *temp = new node;
+bool listStack<T>::push(T newItem) {
+	node<T> *temp = new node<T>;
 	temp->data = newItem;
 	temp->next = head;
 	head = temp;
+	delete temp;
+	temp = NULL;
 	return true;
 }
 
 template <typename T>
 bool listStack<T>::pop() {
-	if (!isEMpty()) {
-		node * temp = head;
+	if (!isEmpty()) {
+		node<T> * temp = head;
 		head = head->next;
 		delete temp;
+		return true;
 	}
 	return false;
 }
-
+	
 template <typename T>
 bool listStack<T>::top(T& newItem) {
-	if (!isEMpty()) {
-		topItem = head->data;
+	if (!isEmpty()) {
+		newItem = head->data;
 		return true;
 	}	
 	return false;
 }
-
-void clear();
-bool push(T& newItem);
-bool pop();
-bool top(T& topItem)
