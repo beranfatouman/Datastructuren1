@@ -1,3 +1,10 @@
+/* Datastructuren Opdracht 1 */
+/* Programmeurs:             */
+/*  - Luc Schreurs           */
+/*    s1987747							 */
+/*  - Berend van Statkenburg */
+/*		s1800604							 */
+
 template <typename T>
 struct node {
 	T data;
@@ -7,7 +14,7 @@ struct node {
 template <typename T>
 class listStack {
 	private:
-		node<T> *head; 
+		node<T> *head;
 		node<T> *tail;
   	public:
 		listStack();
@@ -44,7 +51,7 @@ void listStack<T>::clear() {
 		tail = NULL;
 	}
 }
-		
+
 template <typename T>
 bool listStack<T>::push(T newItem) {
 	node<T> *temp = new node<T>;
@@ -66,12 +73,12 @@ bool listStack<T>::pop() {
 	}
 	return false;
 }
-	
+
 template <typename T>
 bool listStack<T>::top(T& newItem) {
 	if (!isEmpty()) {
 		newItem = head->data;
 		return true;
-	}	
+	}
 	return false;
 }

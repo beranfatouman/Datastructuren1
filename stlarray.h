@@ -1,3 +1,10 @@
+/* Datastructuren Opdracht 1 */
+/* Programmeurs:             */
+/*  - Luc Schreurs           */
+/*    s1987747							 */
+/*  - Berend van Statkenburg */
+/*		s1800604							 */
+
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
 
@@ -24,10 +31,16 @@ arrayStack<T>::arrayStack() {
 }
 
 template <typename T>
+~arrayStack<T>::arrayStack() {
+	delete [] DynamicArray;
+	DynamicArray = NULL;
+}
+
+template <typename T>
 bool arrayStack<T>::isEmpty() {
-	if (DynamicArray == NULL || n=0) 
+	if (DynamicArray == NULL || n=0)
 		return true;
-	else 
+	else
 		return false;
 
 }
@@ -76,7 +89,7 @@ bool arrayStack<T>::top(T& topItem) {
 		topItem = DynamicArray[n-1];
 		return true;
 	}
-	else 
+	else
 		return false;
 }
 
