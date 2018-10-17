@@ -6,7 +6,7 @@ class backspace {
 
 	private:
 		std::string input;
-		T stapel;
+		T stapelverliefd;
 };
 
 template <typename T>
@@ -19,16 +19,16 @@ void backspace<T>::filter() {
 
 	for (unsigned int i=0; i<input.size(); i++) {
 		if (input[i]!='*')
-			stapel.push(input[i]);
+			stapelverliefd.push(input[i]);
 		else
-			stapel.pop();
+			stapelverliefd.pop();
 	}
-	std::string printStapel;
+	std::string printStapelverliefd;
 	char x;
-	while(!stapel.isEmpty()) {
-		stapel.top(x);
-		stapel.pop();
-		printStapel = x + printStapel;
+	while(!stapelverliefd.isEmpty()) {
+		stapelverliefd.top(x);
+		stapelverliefd.pop();
+		printStapelverliefd = x + printStapelverliefd;
 	}
-	std::cout<< printStapel << std::endl;
+	std::cout<< printStapelverliefd << std::endl;
 }

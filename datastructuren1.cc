@@ -11,8 +11,6 @@
 int main(int, char* []) {
     std::string invoer;
     std::cin >> invoer;
-    std::cout << invoer << std::endl;
-
 
     std::cout << "Array Stack:        ";
     backspace<arrayStack<char> >(invoer).filter();
