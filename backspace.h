@@ -1,13 +1,34 @@
 template <typename T>
 class backspace {
 	public:
-		backspace(T Invoer);
+		backspace(std::string Input);
 		void filter();
 
 	private:
-		T invoer;
+		std::string input;
+		T stapel;
 };
 
-backspace<T>::backspace(T Invoer) {
-	invoer = Invoer;
+template <typename T>
+backspace<T>::backspace(std::string Input) {
+	input = Input;
+}
+
+template <typename T>
+void backspace<T>::filter() {
+
+	for (unsigned int i=0; i<input.size(); i++) {
+		if (input[i]!='*')
+			stapel.push(input[i]);
+		else
+			stapel.pop();
+	}
+	std::string printStapel;
+	char x;
+	while(!stapel.isEmpty()) {
+		stapel.top(x);
+		stapel.pop();
+		printStapel = x + printStapel;
+	}
+	std::cout<< printStapel << std::endl;
 }

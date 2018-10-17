@@ -58,8 +58,6 @@ bool listStack<T>::push(T newItem) {
 	temp->data = newItem;
 	temp->next = head;
 	head = temp;
-	delete temp;
-	temp = NULL;
 	return true;
 }
 

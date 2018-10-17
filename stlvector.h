@@ -24,7 +24,7 @@ class vectorStack {
 
 template <typename T>
 vectorStack<T>::vectorStack() {
-	
+
 }
 
 template <typename T>
@@ -38,13 +38,13 @@ bool vectorStack<T>::isEmpty() {
 template <typename T>
 void vectorStack<T>::clear() {
 	if (!Stack.empty())
-		myvector.clear(); // clears all data from a vector.
+		Stack.clear(); // clears all data from a vector.
 	//else ??
 }
 
 template <typename T>
 bool vectorStack<T>::push(T newItem) {
-	int startsize;
+	unsigned int startsize;
 	startsize = Stack.size();
 	Stack.push_back(newItem);
 
@@ -67,7 +67,7 @@ bool vectorStack<T>::pop() {
 template <typename T>
 bool vectorStack<T>::top(T& topItem) {
 	if (!Stack.empty()) {
-		topItem = stack.back();
+		topItem = Stack.back();
 		return true;
 	}
 	return false;

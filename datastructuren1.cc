@@ -8,19 +8,20 @@
 
 
 
-int main(int, char* [])
-{
+int main(int, char* []) {
     std::string invoer;
     std::cin >> invoer;
+    std::cout << invoer << std::endl;
+
 
     std::cout << "Array Stack:        ";
-    backspace<Array<char> >(invoer);
+    backspace<arrayStack<char> >(invoer).filter();
     std::cout << "Linked List Stack:  ";
-    backspace<LinkedList<char> >(invoer);
+    backspace<listStack<char> >(invoer).filter();
     std::cout << "STL Vector Stack:   ";
-    backspace<StlVector<char> >(invoer);
+    backspace<vectorStack<char> >(invoer).filter();
     std::cout << "STL Stack Stack:    ";
-    backspace<StlStack<char> >(invoer);
+    backspace<stackStack<char> >(invoer).filter();
 
     return 0;
 } // main

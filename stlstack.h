@@ -35,7 +35,7 @@ bool stackStack<T>::isEmpty() {
 
 template <typename T>
 void stackStack<T>::clear() {
-	Stack = stack<T>();
+	Stack = std::stack<T>();
 }
 
 template <typename T>

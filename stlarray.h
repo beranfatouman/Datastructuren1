@@ -12,6 +12,7 @@ template <typename T>
 class arrayStack {
 	public:
 		arrayStack();
+		~arrayStack();
 		bool isEmpty();
 		void clear();
 		bool push(T newItem);
@@ -31,14 +32,14 @@ arrayStack<T>::arrayStack() {
 }
 
 template <typename T>
-~arrayStack<T>::arrayStack() {
+arrayStack<T>::~arrayStack() {
 	delete [] DynamicArray;
 	DynamicArray = NULL;
 }
 
 template <typename T>
 bool arrayStack<T>::isEmpty() {
-	if (DynamicArray == NULL || n=0)
+	if (DynamicArray == NULL || n==0)
 		return true;
 	else
 		return false;
@@ -56,7 +57,7 @@ void arrayStack<T>::clear() {
 
 template <typename T>
 bool arrayStack<T>::push(T newItem) {
-	curlength = n;
+	int curlength = n;
 	T * tmp = new T[n+1];
 	for (int i=0; i<n; i++)
 		tmp[i] = DynamicArray[i];
