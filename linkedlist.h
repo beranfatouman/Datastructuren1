@@ -5,6 +5,7 @@
 /*  - Berend van Statkenburg */
 /*		s1800604							 */
 
+//Node struct
 template <typename T>
 struct node {
 	T data;
@@ -15,7 +16,6 @@ template <typename T>
 class listStack {
 	private:
 		node<T> *head;
-		node<T> *tail;
   	public:
 		listStack();
 		//~listStack();
@@ -29,15 +29,14 @@ class listStack {
 template <typename T>
 listStack<T>::listStack() {
 	head = NULL;
-	tail = NULL;
-}
+} //constructor
 
 template <typename T>
 bool listStack<T>::isEmpty() {
-	if (head == NULL && tail == NULL)
+	if (head == NULL)
 		return true;
 	return false;
-}
+} //isEmpty
 
 template <typename T>
 void listStack<T>::clear() {
@@ -48,9 +47,8 @@ void listStack<T>::clear() {
 			delete head;
 			head = temp;
 		}
-		tail = NULL;
 	}
-}
+} //clear
 
 template <typename T>
 bool listStack<T>::push(T newItem) {
@@ -59,7 +57,7 @@ bool listStack<T>::push(T newItem) {
 	temp->next = head;
 	head = temp;
 	return true;
-}
+} //push
 
 template <typename T>
 bool listStack<T>::pop() {
@@ -70,7 +68,7 @@ bool listStack<T>::pop() {
 		return true;
 	}
 	return false;
-}
+} //pop
 
 template <typename T>
 bool listStack<T>::top(T& newItem) {
@@ -79,4 +77,4 @@ bool listStack<T>::top(T& newItem) {
 		return true;
 	}
 	return false;
-}
+} //top

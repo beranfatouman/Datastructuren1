@@ -7,6 +7,10 @@
 
 #include <stack>
 
+
+// De meeste functies van de vectorStack zijn geimplementeerd mbv
+// functies van std::stack. Als de functie ook een booleaanse waarde
+// terug moet geven is dat er dan ook bij geimplementeerd.
 template <typename T>
 class stackStack {
 	public:
@@ -24,33 +28,35 @@ class stackStack {
 template <typename T>
 stackStack<T>::stackStack() {
 
-}
+}//constructor
 
 template <typename T>
 bool stackStack<T>::isEmpty() {
 	if (Stack.empty())
 		return true;
 	return false;
-}
+}//isEmpty
 
+//The stack can be cleared by overwriting the existing
+//stack with a new stack.
 template <typename T>
 void stackStack<T>::clear() {
 	Stack = std::stack<T>();
-}
+}//clear
 
+//If compiled without Wextra, this function gives a warning
+//because there is no return false statement
 template <typename T>
 bool stackStack<T>::push(T newItem) {
-	if (1==0) return false;
 	Stack.push(newItem);
 	return true;
-}
+}//push
 
 template <typename T>
 bool stackStack<T>::pop() {
-	if (1==0) return false;
 	Stack.pop();
 	return true;
-}
+}//pop
 
 template <typename T>
 bool stackStack<T>::top(T& topItem) {
@@ -58,4 +64,4 @@ bool stackStack<T>::top(T& topItem) {
 		return false;
 	topItem = Stack.top();
 	return true;
-}
+}//top

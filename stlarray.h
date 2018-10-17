@@ -5,8 +5,10 @@
 /*  - Berend van Statkenburg */
 /*		s1800604							 */
 
+//This time the stack is implemented using dynamic arrays.
 #ifndef ARRAYSTACK_H
 #define ARRAYSTACK_H
+
 
 template <typename T>
 class arrayStack {
@@ -29,13 +31,15 @@ template <typename T>
 arrayStack<T>::arrayStack() {
 	n = 0;
 	DynamicArray = new T[n];
-}
+} //constructor
 
+//The destructor is implemented here because dynamically
+//allocated memory needs to be freed.
 template <typename T>
 arrayStack<T>::~arrayStack() {
 	delete [] DynamicArray;
 	DynamicArray = NULL;
-}
+} //destructor
 
 template <typename T>
 bool arrayStack<T>::isEmpty() {
@@ -43,7 +47,6 @@ bool arrayStack<T>::isEmpty() {
 		return true;
 	else
 		return false;
-
 }
 
 template <typename T>
@@ -52,9 +55,11 @@ void arrayStack<T>::clear() {
 		delete [] DynamicArray;
 		DynamicArray = NULL;
 	}
+} //clear
 
-}
-
+//Every time an item is pushed to the stack the array out of
+//size n and its content get copied and put in an array out
+//of size n+1. The opposite is done in the pop function.
 template <typename T>
 bool arrayStack<T>::push(T newItem) {
 	int curlength = n;
@@ -72,7 +77,7 @@ bool arrayStack<T>::push(T newItem) {
 	if (curlength != n-1)
 		return false;
 	return true;
-}
+} //push
 
 template <typename T>
 bool arrayStack<T>::pop() {
@@ -82,7 +87,7 @@ bool arrayStack<T>::pop() {
 		return true;
 	}
 	return false;
-}
+} //pop
 
 template <typename T>
 bool arrayStack<T>::top(T& topItem) {
@@ -92,7 +97,7 @@ bool arrayStack<T>::top(T& topItem) {
 	}
 	else
 		return false;
-}
+} //top
 
 
 #endif

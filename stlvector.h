@@ -7,6 +7,9 @@
 
 #include <vector>
 
+// De meeste functies van de vectorStack zijn geimplementeerd mbv
+// functies van std::vector. Als de functie ook een booleaanse waarde
+// terug moet geven is dat er dan ook bij geimplementeerd.
 template <typename T>
 class vectorStack {
 	private:
@@ -22,10 +25,11 @@ class vectorStack {
 		bool top(T& topItem);
 };
 
+
 template <typename T>
 vectorStack<T>::vectorStack() {
 
-}
+} //constructor
 
 template <typename T>
 bool vectorStack<T>::isEmpty() {
@@ -33,14 +37,13 @@ bool vectorStack<T>::isEmpty() {
 		return true;
 	else
 		return false;
-}
+} //isEmpty
 
 template <typename T>
 void vectorStack<T>::clear() {
 	if (!Stack.empty())
 		Stack.clear(); // clears all data from a vector.
-	//else ??
-}
+} //clear
 
 template <typename T>
 bool vectorStack<T>::push(T newItem) {
@@ -52,7 +55,7 @@ bool vectorStack<T>::push(T newItem) {
 		return true;
 	else
 		return false;
-}
+} //push
 
 template <typename T>
 bool vectorStack<T>::pop() {
@@ -62,7 +65,7 @@ bool vectorStack<T>::pop() {
 	}
 	else
 		return false;
-}
+} //pop
 
 template <typename T>
 bool vectorStack<T>::top(T& topItem) {
@@ -71,4 +74,4 @@ bool vectorStack<T>::top(T& topItem) {
 		return true;
 	}
 	return false;
-}
+} //top
